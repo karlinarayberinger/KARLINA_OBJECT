@@ -39,7 +39,8 @@ int * K = new int [N]; // A pointer-to-int type variable named K is used to stor
 <hr>
 <p><strong>PROGRAM_SOURCE_CODE</strong></p>
 <hr>
-<p><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block. (The spaces were inserted between the library names and angle brackets in the preformatted text box below in order to prevent the WordPress server from misinterpreting those C++ library references as <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags in the source code of this web page).</em></p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
 <p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/arrays.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/arrays.cpp</a></p>
 <hr>
 <pre>
@@ -52,11 +53,11 @@ int * K = new int [N]; // A pointer-to-int type variable named K is used to stor
  */
 
 /* preprocessing directives */
-#include &lt; iostream &gt; // standard input (std::cin), standard output (std::cout)
-#include &lt; fstream &gt; // file input, file output
-#include &lt; stdio.h &gt; // NULL macro
-#include &lt; stdlib.h &gt; // srand(), rand()
-#include &lt; time.h &gt; // time() 
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // file input, file output
+#include &lt;stdio.h&gt; // NULL macro
+#include &lt;stdlib.h&gt; // srand(), rand()
+#include &lt;time.h&gt; // time() 
 #define MAXIMUM_S 1000 // constant which represents maximum value for S
 #define MAXIMUM_T 1000 // constant which represents maximum value for T
 
@@ -269,8 +270,11 @@ int main()
     // Print a horizontal line to the command line terminal.
     file &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
-    // Print &quot;Enter a natural number, S, for representing the number of elements to include in an array which is no larger than than {MAXIMUM_S}: &quot; to the command line terminal.
-    std::cout &lt;&lt; &quot;\n\nEnter a natural number, S, for representing the number of elements to include in an array which is no larger than &quot; &lt;&lt; MAXIMUM_S &lt;&gt; S;
+    // Print "Enter a natural number, S, for representing the number of elements to include in an array which is no larger than than {MAXIMUM_S}: " to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nEnter a natural number, S, for representing the number of elements to include in an array which is no larger than &quot; &lt;&lt; MAXIMUM_S &lt;&lt; &quot;: &quot;;
+
+    // Scan the command line terminal for the most recent keyboard input value.
+    std::cin &gt;&gt; S;
 
     // Print &quot;The value which was entered for S is {S}.&quot; to the command line terminal.
     std::cout &lt;&lt; &quot;\nThe value which was entered for S is &quot; &lt;&lt; S &lt;&lt; &quot;.&quot;;
@@ -279,7 +283,7 @@ int main()
     file &lt;&lt; &quot;\n\nThe value which was entered for S is &quot; &lt;&lt; S &lt;&lt; &quot;.&quot;;
 
     // If S is smaller than 1 or if S is larger than MAXIMUM_S, set S to 10.
-    S = ((S  MAXIMUM_S)) ? 10 : S; 
+    S = ((S &lt; 1) || (S &gt; MAXIMUM_S)) ? 10 : S;  
 
     // Print &quot;S := {S}. // number of consecutive int-sized chunks of memory to allocate to an array such that the memory address of the first element of that array, A[0], is stored in a pointer-to-int type variable named A&quot; to the command line terminal.
     std::cout &lt;&lt; &quot;\n\nS := &quot; &lt;&lt; S &lt;&lt; &quot;. // number of consecutive int-sized chunks of memory to allocate to an array such that the memory address of the first element of that array, A[0], is stored in a pointer-to-int type variable named A&quot;;
@@ -350,8 +354,11 @@ int main()
     // Print a horizontal line to the command line terminal.
     file &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
-    // Print &quot;Enter a natural number, T, for representing the number of unique states which each element of the array can store exactly one of which is no larger than {MAXIMUM_T}: &quot; to the command line terminal.
-    std::cout &lt;&lt; &quot;\n\nEnter a natural number, T, for representing the number of unique states which each element of the array can store exactly one of which is no larger than &quot; &lt;&lt; MAXIMUM_T &lt;&gt; T;
+    // Print "Enter a natural number, T, for representing the number of unique states which each element of the array can store exactly one of which is no larger than {MAXIMUM_T}: " to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nEnter a natural number, T, for representing the number of unique states which each element of the array can store exactly one of which is no larger than &quot; &lt;&lt; MAXIMUM_T &lt;&lt; &quot;: &quot;;
+
+    // Scan the command line terminal for the most recent keyboard input value.
+    std::cin &gt;&gt; T;
 
     // Print &quot;The value which was entered for T is {T}.&quot; to the command line terminal.
     std::cout &lt;&lt; &quot;\nThe value which was entered for T is &quot; &lt;&lt; T &lt;&lt; &quot;.&quot;;
@@ -360,7 +367,7 @@ int main()
     file &lt;&lt; &quot;\n\nThe value which was entered for T is &quot; &lt;&lt; T &lt;&lt; &quot;.&quot;;
 
     // If T is smaller than 1 or if T is larger than MAXIMUM_T, set T to 100.
-    T = ((T  MAXIMUM_T)) ? 100 : T; 
+    T = ((T &lt; 1) || (T &gt; MAXIMUM_T)) ? 100 : T; 
 
     // Print &quot;T := {T}. // number of unique states which each element of array A can represent&quot; to the command line terminal.
     std::cout &lt;&lt; &quot;\n\nT := &quot; &lt;&lt; T &lt;&lt; &quot;. // number of unique states which each element of array A can represent&quot;;
@@ -1241,5 +1248,5 @@ delete [] C; // Free up T contiguous pointer-to-char-sized chunks of memory whic
 End Of Program
 --------------------------------</pre>
 <hr>
-<p>This web page was last updated on 29_AUGUST_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<p>This web page was last updated on 16_SEPTEMBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
 <hr>
