@@ -34,7 +34,8 @@
 <hr>
 <p><strong>PROGRAM_SOURCE_CODE</strong></p>
 <hr>
-<p><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block. (The spaces were inserted between the library names and angle brackets in the preformatted text box below in order to prevent the WordPress server from misinterpreting those C++ library references as <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags in the source code of this web page).</em></p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
 <p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/cube_root_approximation.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/cube_root_approximation.cpp</a></p>
 <hr>
 <pre>
@@ -47,8 +48,8 @@
  */
 
 /* preprocessing directives */
-#include &lt; iostream &gt; // standard input (std::cin), standard output (std::cout)
-#include &lt; fstream &gt; // file input, file output
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // file input, file output
 #define MAXIMUM_X 1000 // constant which represents maximum absolute value of the program input value
 #define E 0.00000001 // constant which represents the degree of accuracy of the square root approximation 
 
@@ -62,8 +63,8 @@ long double compute_cube_root_of_real_number(float x, std::ostream &amp; output)
  */
 float absolute_value(float x)
 {
-    if (x  (b * b * b)) return (n - (b * b * b));
-    return ((b * b * b) - n);
+    if (x &lt; 0) return -1 * x;
+    return x;
 }
 
 /**
@@ -107,7 +108,10 @@ long double compute_cube_root_of_real_number(float x, std::ostream &amp; output)
         output &lt;&lt; &quot;\nepsilon = difference(x , B) = &quot; &lt;&lt; epsilon &lt;&lt; &quot;.&quot;;
         if (epsilon &lt;= E) 
         {
-            if (original_x  x) C = B;
+            if (original_x &lt; 0) return -1 * B;
+            return B;
+        }
+        if ((B * B * B) &gt; x) C = B;
         else A = B;
         i += 1;
     }
@@ -122,7 +126,7 @@ int main()
     // Declare a double type variable and set its initial value to zero.
     long double S = 0.0;
 
-    // Declare a variable for storing the program user's answer of whether or not to continue inputting values.
+    // Declare a variable for storing the program user&#039;s answer of whether or not to continue inputting values.
     int input_additional_values = 1;
 
     // Declare a file output stream object.
@@ -141,7 +145,7 @@ int main()
      * Open the plain-text file named cube_root_approximation_output.txt 
      * and set that file to be overwritten with program data.
      */
-    file.open("cube_root_approximation_output.txt");
+    file.open(&quot;cube_root_approximation_output.txt&quot;);
 
     // Print an opening message to the command line terminal.
     std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
@@ -157,9 +161,12 @@ int main()
     while (input_additional_values != 0)
     {
         // Print &quot;Enter a real number (represented using only base-ten digits with an optional radix and with an optional negative sign), x, which is no larger than {MAXIMUM_X}: &quot; to the command line terminal.
-        std::cout &lt;&lt; &quot;\n\nEnter a real number (represented using only base-ten digits with an optional radix and with an optional negative sign), x, which is no larger than &quot; &lt;&lt; MAXIMUM_X &lt;&gt; x;
+        std::cout &lt;&lt; &quot;\n\nEnter a real number (represented using only base-ten digits with an optional radix and with an optional negative sign), x, which is no larger than &quot; &lt;&lt; MAXIMUM_X &lt;&lt; &quot;: &quot;;
 
-        // Print "The value which was entered for x is {x}." to the command line terminal.
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin &gt;&gt; x;
+
+        // Print &quot;The value which was entered for x is {x}.&quot; to the command line terminal.
         std::cout &lt;&lt; &quot;\nThe value which was entered for x is &quot; &lt;&lt; x &lt;&lt; &quot;.&quot;;
 
         // Print &quot;The value which was entered for x is {x}.&quot; to the file output stream.
@@ -202,7 +209,10 @@ int main()
         std::cout &lt;&lt; &quot;\n\n(S * S * S) = &quot; &lt;&lt; (S * S * S) &lt;&lt; &quot;. // the approximate absolute value of x&quot;;
 
         // Ask the user whether or not to continue inputing values.
-        std::cout &lt;&gt; input_additional_values;
+        std::cout &lt;&lt; &quot;\n\nWould you like to continue inputing program values? (Enter 1 if YES. Enter 0 if NO): &quot;;
+
+        // Scan the command line terminal for the most recent user input entered via keyboard to store in the variable named input_additional_values.
+        std::cin &gt;&gt; input_additional_values;
 
         // Print a horizontal line to the command line terminal.
         std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
@@ -2091,5 +2101,5 @@ S = approximate_cube_root(27) = 3.000000000349245965480804443359375.
 End Of Program
 --------------------------------</pre>
 <hr>
-<p>This web page was last updated on 29_AUGUST_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<p>This web page was last updated on 16_SEPTEMBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
 <hr>
