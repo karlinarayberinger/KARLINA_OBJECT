@@ -1,7 +1,7 @@
 /**
  * file: power.cpp
  * type: C++ (source file)
- * date: 18_OCTOBER_2023
+ * date: 16_SEPTEMBER_2024
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -82,7 +82,10 @@ int main()
         file << "\n\nEnter a real number value for base which is no larger than ";
         file << MAXIMUM_ABSOLUTE_VALUE_BASE;
         file << " and no smaller than ";
-        file << (-1 * MAXIMUM_ABSOLUTE_VALUE_BASE) <> base;
+        file << (-1 * MAXIMUM_ABSOLUTE_VALUE_BASE) << ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin >> base;
 
         // Print the most recently input keyboard value to the command line terminal.
         std::cout << base;
@@ -100,7 +103,10 @@ int main()
         file << "\n\nEnter a real number value for exponent which is no larger than ";
         file << MAXIMUM_ABSOLUTE_VALUE_EXPONENT;
         file << " and no smaller than ";
-        file << (-1 * MAXIMUM_ABSOLUTE_VALUE_EXPONENT) <> exponent;
+        file << (-1 * MAXIMUM_ABSOLUTE_VALUE_EXPONENT) << ": ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin >> exponent;
 
         // Print the most recently input keyboard value to the command line terminal.
         std::cout << exponent;
@@ -109,7 +115,7 @@ int main()
         file << exponent;
 
         // If base is not within the range of accepted values, set base to 1.
-        if ((base  MAXIMUM_ABSOLUTE_VALUE_BASE)) 
+        if ((base < (-1 * MAXIMUM_ABSOLUTE_VALUE_BASE)) || (base > MAXIMUM_ABSOLUTE_VALUE_BASE)) 
         {
             base = 1;
             std::cout << "\n\nBecause the input value for base was not within the range of accepted values, base was set to the default value of 1.";
@@ -117,7 +123,7 @@ int main()
         }
 
         // If exponent is not within the range of accepted values, set exponent to 0.
-        if ((exponent  MAXIMUM_ABSOLUTE_VALUE_EXPONENT)) 
+        if ((exponent < (-1 * MAXIMUM_ABSOLUTE_VALUE_EXPONENT)) || (exponent > MAXIMUM_ABSOLUTE_VALUE_EXPONENT)) 
         {
             exponent = 0;
             std::cout << "\n\nBecause the input value for exponent was not within the range of accepted values, exponent was set to the default value of 0.";
@@ -134,7 +140,10 @@ int main()
         file << "\n\nresult = power(base,exponent) = power(" << base << ", " << exponent << ") = " << base << " ^ " << exponent << " = " << result << ".";
 
         // Ask the user whether or not to continue inputing values.
-        std::cout <> input_additional_values;
+        std::cout << "\n\nWould you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): ";
+
+        // Scan the command line terminal for the most recent keyboard input value.
+        std::cin >> input_additional_values;
     }
 
     // Print a closing message to the command line terminal.
@@ -267,7 +276,10 @@ double power(double base, double exponent)
     double output = 1.0;
     if (exponent == 0) return 1; 
     if (exponent == 1) return base;
-    // if ((base == 0) && (exponent  0)
+    // if ((base == 0) && (exponent < 0)) return -666; // Technically 0 raised to the power of some negative exponent is undefined (i.e. not a number).
+    if (is_whole_number(exponent))
+    {
+        if (exponent > 0)
         {
             while (exponent > 0) 
             {
@@ -287,6 +299,6 @@ double power(double base, double exponent)
             return 1 / output;
         }
     }
-    if (exponent > 0) return power_of_e_to_x(ln(base) * exponent); // Return e ^ (ln(base) * exponent). 
+    if (exponent > 0) return power_of_e_to_x(ln(base) * exponent); // Return e ^ (ln(base) * exponent).
     return power_of_e_to_x(power_of_e_to_x(ln(base) * absolute_value(exponent))); // Return e ^ (e ^ (ln(base) * absolute_value(exponent))).
 }
