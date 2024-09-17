@@ -34,7 +34,8 @@ golden_ratio_approximation(N) := fibonacci(N) / fibonacci(N - 1).  // N is any n
 <hr>
 <p><strong>PROGRAM_SOURCE_CODE</strong></p>
 <hr>
-<p><em>When copy-pasting the source code from the preformatted text box below into a text editor document, remove the spaces between the angle brackets and the library names in the preprocessing directives code block. (The spaces were inserted between the library names and angle brackets in the preformatted text box below in order to prevent the WordPress server from misinterpreting those C++ library references as <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags in the source code of this web page).</em></p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below. A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets that C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves.</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;) displayed in the aforementioned text box have been replaced (at the source code level of this web page) with Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor interprets a plain-text versions of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor deletes the content between those (plain-text) inequality symbols)).</em></p>
 <p>C++_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/golden_ratio_approximation.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/golden_ratio_approximation.cpp</a></p>
 <hr>
 <pre>/**
@@ -46,8 +47,8 @@ golden_ratio_approximation(N) := fibonacci(N) / fibonacci(N - 1).  // N is any n
  */
 
 /* preprocessing directives */
-#include &lt; iostream &gt; // standard input (std::cin), standard output (std::cout)
-#include &lt; fstream &gt; // file input, file output
+#include &lt;iostream&gt; // standard input (std::cin), standard output (std::cout)
+#include &lt;fstream&gt; // file input, file output
 #define MAXIMUM_N 92 // constant which represents maximum N value
 
 /* function prototypes */
@@ -100,9 +101,9 @@ long double golden_ratio_approximation(int N, std::ostream &amp; output)
     A = compute_Nth_fibonacci_sequence_term_using_iteration(N);
     B = compute_Nth_fibonacci_sequence_term_using_iteration(N - 1);
     C = (long double) A / B;
-    output &lt;&lt; "\n\ngolden_ratio_approximation(" &lt;&lt; N &lt;&lt; ") = fibonacci(" &lt;&lt; N &lt;&lt; ") / fibonacci(" &lt;&lt; N - 1 &lt;&lt; ").";
-    output &lt;&lt; "\ngolden_ratio_approximation(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; A &lt;&lt; " / " &lt;&lt; B &lt;&lt; ".";
-    output &lt;&lt; "\ngolden_ratio_approximation(" &lt;&lt; N &lt;&lt; ") = " &lt;&lt; C &lt;&lt; ".";
+    output &lt;&lt; &quot;\n\ngolden_ratio_approximation(&quot; &lt;&lt; N &lt;&lt; &quot;) = fibonacci(&quot; &lt;&lt; N &lt;&lt; &quot;) / fibonacci(&quot; &lt;&lt; N - 1 &lt;&lt; &quot;).&quot;;
+    output &lt;&lt; &quot;\ngolden_ratio_approximation(&quot; &lt;&lt; N &lt;&lt; &quot;) = &quot; &lt;&lt; A &lt;&lt; &quot; / &quot; &lt;&lt; B &lt;&lt; &quot;.&quot;;
+    output &lt;&lt; &quot;\ngolden_ratio_approximation(&quot; &lt;&lt; N &lt;&lt; &quot;) = &quot; &lt;&lt; C &lt;&lt; &quot;.&quot;;
     return C;
 }
 
@@ -131,147 +132,147 @@ int main()
      * Open the plain-text file named golden_ratio_approximation_output.txt 
      * and set that file to be overwritten with program data.
      */
-    file.open("golden_ratio_approximation_output.txt");
+    file.open(&quot;golden_ratio_approximation_output.txt&quot;);
 
     // Print an opening message to the command line terminal.
-    std::cout &lt;&lt; "\n\n--------------------------------";
-    std::cout &lt;&lt; "\nStart Of Program";
-    std::cout &lt;&lt; "\n--------------------------------";
+    std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
+    std::cout &lt;&lt; &quot;\nStart Of Program&quot;;
+    std::cout &lt;&lt; &quot;\n--------------------------------&quot;;
 
     // Print an opening message to the file output stream.
-    file &lt;&lt; "--------------------------------";
-    file &lt;&lt; "\nStart Of Program";
-    file &lt;&lt; "\n--------------------------------";
+    file &lt;&lt; &quot;--------------------------------&quot;;
+    file &lt;&lt; &quot;\nStart Of Program&quot;;
+    file &lt;&lt; &quot;\n--------------------------------&quot;;
 
-    // Print "The following statements describe the data capacities of various primitive C++ data types:" to the command line terminal.
-    std::cout &lt;&lt; "\n\nThe following statements describe the data capacities of various primitive C++ data types:";
+    // Print &quot;The following statements describe the data capacities of various primitive C++ data types:&quot; to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nThe following statements describe the data capacities of various primitive C++ data types:&quot;;
 
-    // Print "The following statements describe the data capacities of various primitive C++ data types:" to the file output stream.
-    file &lt;&lt; "\n\nThe following statements describe the data capacities of various primitive C++ data types:";
+    // Print &quot;The following statements describe the data capacities of various primitive C++ data types:&quot; to the file output stream.
+    file &lt;&lt; &quot;\n\nThe following statements describe the data capacities of various primitive C++ data types:&quot;;
 
     // Print the data size of an int type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(int) = " &lt;&lt; sizeof(int) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(int) = &quot; &lt;&lt; sizeof(int) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an int type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(int) = " &lt;&lt; sizeof(int) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(int) = &quot; &lt;&lt; sizeof(int) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned int type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(unsigned int) = " &lt;&lt; sizeof(unsigned int) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(unsigned int) = &quot; &lt;&lt; sizeof(unsigned int) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned int type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(unsigned int) = " &lt;&lt; sizeof(unsigned int) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(unsigned int) = &quot; &lt;&lt; sizeof(unsigned int) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(long) = " &lt;&lt; sizeof(long) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(long) = &quot; &lt;&lt; sizeof(long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(long) = " &lt;&lt; sizeof(long) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(long) = &quot; &lt;&lt; sizeof(long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned long type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(unsigned long) = " &lt;&lt; sizeof(unsigned long) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(unsigned long) = &quot; &lt;&lt; sizeof(unsigned long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned long type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(unsigned long) = " &lt;&lt; sizeof(unsigned long) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(unsigned long) = &quot; &lt;&lt; sizeof(unsigned long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long long type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(long long) = " &lt;&lt; sizeof(long long) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(long long) = &quot; &lt;&lt; sizeof(long long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long long type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(long long) = " &lt;&lt; sizeof(long long) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(long long) = &quot; &lt;&lt; sizeof(long long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned long long  type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(unsigned long long) = " &lt;&lt; sizeof(unsigned long long) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(unsigned long long) = &quot; &lt;&lt; sizeof(unsigned long long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of an unsigned long long type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(unsigned long long) = " &lt;&lt; sizeof(unsigned long long) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(unsigned long long) = &quot; &lt;&lt; sizeof(unsigned long long) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a bool type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(bool) = " &lt;&lt; sizeof(bool) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(bool) = &quot; &lt;&lt; sizeof(bool) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a bool type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(bool) = " &lt;&lt; sizeof(bool) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(bool) = &quot; &lt;&lt; sizeof(bool) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a char type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(char) = " &lt;&lt; sizeof(char) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(char) = &quot; &lt;&lt; sizeof(char) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a char type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(char) = " &lt;&lt; sizeof(char) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(char) = &quot; &lt;&lt; sizeof(char) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a float type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(float) = " &lt;&lt; sizeof(float) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(float) = &quot; &lt;&lt; sizeof(float) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a float type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(float) = " &lt;&lt; sizeof(float) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(float) = &quot; &lt;&lt; sizeof(float) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a double type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(double) = " &lt;&lt; sizeof(double) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(double) = &quot; &lt;&lt; sizeof(double) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a double type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(double) = " &lt;&lt; sizeof(double) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(double) = &quot; &lt;&lt; sizeof(double) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long double type variable to the command line terminal.
-    std::cout &lt;&lt; "\n\nsizeof(long double) = " &lt;&lt; sizeof(long double) &lt;&lt; " byte(s).";
+    std::cout &lt;&lt; &quot;\n\nsizeof(long double) = &quot; &lt;&lt; sizeof(long double) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print the data size of a long double type variable to the file output stream.
-    file &lt;&lt; "\n\nsizeof(long double) = " &lt;&lt; sizeof(long double) &lt;&lt; " byte(s).";
+    file &lt;&lt; &quot;\n\nsizeof(long double) = &quot; &lt;&lt; sizeof(long double) &lt;&lt; &quot; byte(s).&quot;;
 
     // Print a horizontal line to the command line terminal.
-    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
     // Print a horizontal line to the command line terminal.
-    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
-    // Print "Enter a natural number which is no larger than {MAXIMUM_N}: " to the command line terminal.
-    std::cout &lt;&lt; "\n\nEnter a natural number which is no larger than " &lt;&lt; MAXIMUM_N &lt;&lt; ": ";
+    // Print &quot;Enter a natural number which is no larger than {MAXIMUM_N}: &quot; to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nEnter a natural number which is no larger than &quot; &lt;&lt; MAXIMUM_N &lt;&lt; &quot;: &quot;;
 
     // Scan the command line terminal for the most recent keyboard input value.
     std::cin &gt;&gt; N;
 
-    // Print "The value which was entered for N is {N}." to the command line terminal.
-    std::cout &lt;&lt; "\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+    // Print &quot;The value which was entered for N is {N}.&quot; to the command line terminal.
+    std::cout &lt;&lt; &quot;\nThe value which was entered for N is &quot; &lt;&lt; N &lt;&lt; &quot;.&quot;;
 
-    // Print "The value which was entered for N is {N}." to the file output stream.
-    file &lt;&lt; "\n\nThe value which was entered for N is " &lt;&lt; N &lt;&lt; ".";
+    // Print &quot;The value which was entered for N is {N}.&quot; to the file output stream.
+    file &lt;&lt; &quot;\n\nThe value which was entered for N is &quot; &lt;&lt; N &lt;&lt; &quot;.&quot;;
 
     // If N is smaller than 1 or if N is larger than MAXIMUM_N, set N to 1.
     N = ((N &lt; 1) || (N &gt; MAXIMUM_N)) ? 1 : N; // A tertiary operation (using the tertiary operator (?)) is an alternative to using if-else statements.
 
-    // Print "N := {N}." to the command line terminal.
-    std::cout &lt;&lt; "\n\nN := " &lt;&lt; N &lt;&lt; ".";
+    // Print &quot;N := {N}.&quot; to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nN := &quot; &lt;&lt; N &lt;&lt; &quot;.&quot;;
 
-    // Print "N := {N}." to the file output stream.
-    file &lt;&lt; "\n\nN := " &lt;&lt; N &lt;&lt; ".";
-
-    // Print a horizontal line to the command line terminal.
-    std::cout &lt;&lt; "\n\n--------------------------------";
+    // Print &quot;N := {N}.&quot; to the file output stream.
+    file &lt;&lt; &quot;\n\nN := &quot; &lt;&lt; N &lt;&lt; &quot;.&quot;;
 
     // Print a horizontal line to the command line terminal.
-    file &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
-    // Print "Computing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:" to the command line terminal.
-    std::cout &lt;&lt; "\n\nComputing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:";
+    // Print a horizontal line to the command line terminal.
+    file &lt;&lt; &quot;\n\n--------------------------------&quot;;
 
-    // Print "Computing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:" to the file output stream.
-    file &lt;&lt; "\n\nComputing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:";
+    // Print &quot;Computing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:&quot; to the command line terminal.
+    std::cout &lt;&lt; &quot;\n\nComputing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:&quot;;
+
+    // Print &quot;Computing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:&quot; to the file output stream.
+    file &lt;&lt; &quot;\n\nComputing the first N Golden Ratio approximations by dividing adjacent terms of the Fibonacci Sequence:&quot;;
 
     // Print the first N Golden Ratio approximations to the command line terminal and to the file output stream.
     for (i = 1; i &lt;= N; i += 1) 
     {
         G = golden_ratio_approximation(i, std::cout); // Print comments to the command line terminal.
         golden_ratio_approximation(i, file); // Print comments to the file output stream.
-        std::cout &lt;&lt; "\nG = golden_ratio_approximation(" &lt;&lt; i &lt;&lt; ") = " &lt;&lt; G &lt;&lt; ".";
-        file &lt;&lt; "\nG = golden_ratio_approximation(" &lt;&lt; i &lt;&lt; ") = " &lt;&lt; G &lt;&lt; ".";
+        std::cout &lt;&lt; &quot;\nG = golden_ratio_approximation(&quot; &lt;&lt; i &lt;&lt; &quot;) = &quot; &lt;&lt; G &lt;&lt; &quot;.&quot;;
+        file &lt;&lt; &quot;\nG = golden_ratio_approximation(&quot; &lt;&lt; i &lt;&lt; &quot;) = &quot; &lt;&lt; G &lt;&lt; &quot;.&quot;;
     }
 
     // Print a closing message to the command line terminal.
-    std::cout &lt;&lt; "\n\n--------------------------------";
-    std::cout &lt;&lt; "\nEnd Of Program";
-    std::cout &lt;&lt; "\n--------------------------------\n\n";
+    std::cout &lt;&lt; &quot;\n\n--------------------------------&quot;;
+    std::cout &lt;&lt; &quot;\nEnd Of Program&quot;;
+    std::cout &lt;&lt; &quot;\n--------------------------------\n\n&quot;;
 
     // Print a closing message to the file output stream.
-    file &lt;&lt; "\n\n--------------------------------";
-    file &lt;&lt; "\nEnd Of Program";
-    file &lt;&lt; "\n--------------------------------";
+    file &lt;&lt; &quot;\n\n--------------------------------&quot;;
+    file &lt;&lt; &quot;\nEnd Of Program&quot;;
+    file &lt;&lt; &quot;\n--------------------------------&quot;;
 
     // Close the file output stream.
     file.close();
@@ -789,5 +790,5 @@ End Of Program
 --------------------------------
 </pre>
 <hr>
-<p>This web page was last updated on 29_AUGUST_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<p>This web page was last updated on 16_SEPTEMBER_2024. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
 <hr>
