@@ -408,7 +408,7 @@ function hide_start_button() {
 }
 
 /**
- * Make the START button visible as soon as the RESET button is clicked.
+ * Make the START button visible as soon as the RESET button is clicked or after the web page is loaded by the web browser.
  * 
  * Assume that this function is called in response to the RESET button being clicked.
  */
@@ -436,8 +436,7 @@ function hide_reset_button() {
 }
 
 /**
- * Make the RESET button visible as soon as the 3600 timed Monte Carlo dart-throwing simulation starts.
- * Assume that this function is called in response to the START button being clicked.
+ * Make the RESET button visible as soon as the 3600 timed Monte Carlo dart-throwing simulation finishes.
  */
 function unhide_reset_button() {
     try {
