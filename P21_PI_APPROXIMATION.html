@@ -15,7 +15,7 @@
 <hr>
 <p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.html</a></p>
 <p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.js</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT/main/pi_approximation.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT/main/pi_approximation.js</a></p>
 <hr>
 <p><strong>Hyper-Text-Markup-Language Code</strong></p>
 <hr>
@@ -152,7 +152,7 @@ td {
 <p><strong>JavaScript Code</strong></p>
 <hr>
 <p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the PI_APPROXIMATION web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>pi_approximation.js</strong>.</p>
-<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/pi_approximation.js</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT/main/pi_approximation.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT/main/pi_approximation.js</a></p>
 <hr>
 <pre>/**
  * file: pi_approximation.js
@@ -564,7 +564,7 @@ function hide_start_button() {
 }
 
 /**
- * Make the START button visible as soon as the RESET button is clicked.
+ * Make the START button visible as soon as the RESET button is clicked or after the web page is loaded by the web browser.
  * 
  * Assume that this function is called in response to the RESET button being clicked.
  */
@@ -692,14 +692,14 @@ function plot_random_pixel_on_square_canvas(simulation) {
  * Use the setInterval function to space plot_random_pixel_on_square_canvas(simulation) function calls apart by one second.
  */
 function start_monte_carlo_simulation() {
-    const time_point = Date.now(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
-    let simulation; // timer interval handler
-    const message = "The Monte Carlo simulation started at time: " + time_point + " milliseconds since 01_JANUARY_1970 00:00:00 (Coordinated Universal Time (UTC)).";
-    console.log(message);
-    document.getElementById("timestamped_events_log").innerHTML += p0 + message + p1;
-    initialize_application();
-    hide_start_button();
-    simulation = setInterval( function() { plot_random_pixel_on_square_canvas(simulation); }, 1000); // The plot_random_pixel_on_square_canvas(simulation) function is called once every 1000 milliseconds until the timer interval is cleared.
+	const time_point = Date.now(), p0 = '', p1 = '';
+	let simulation; // timer interval handler
+	const message = "The Monte Carlo simulation started at time: " + time_point + " milliseconds since 01_JANUARY_1970 00:00:00 (Coordinated Universal Time (UTC)).";
+	console.log(message);
+	document.getElementById("timestamped_events_log").innerHTML += p0 + message + p1;
+	initialize_application();
+	hide_start_button();
+	simulation = setInterval( function() { plot_random_pixel_on_square_canvas(simulation); }, 1000); // The plot_random_pixel_on_square_canvas(simulation) function is called once every 1000 milliseconds until the timer interval is cleared.
 }
 </pre>
 <hr>
@@ -762,4 +762,4 @@ function start_monte_carlo_simulation() {
 
 <hr>
 <p>This web page was last updated on 29_DECEMBER_2024. The content displayed on this web page is licensed as <a style="background: #000000;color: #ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
-<hr>
+<hr>	
