@@ -2,7 +2,7 @@
  * file: sound_track_looper.js
  * type: JavaScript
  * author: karbytes
- * date: 22_NOVEMBER_2024
+ * date: 18_JANUARY_2025
  * license: PUBLIC_DOMAIN
  */
 
@@ -120,7 +120,7 @@ function start_sound_track_looper() {
         let action = undefined;
         let number_of_seconds = 0;
         let number_of_loops = 0;
-        document.getElementById("console_display").innerHTML += (('') + message + (''));
+        document.getElementById("console_display").innerHTML += (('<p>') + message + ('</p>'));
         button.style.display = "none";
         elapsed_seconds_display.innerHTML = "0";
         loops_completed_display.innerHTML = "0";
